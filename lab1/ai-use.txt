@@ -1,0 +1,4 @@
+I used the built in Copilot to help one prompt I made was where and how could I best use a responsive bootstrap grid. It provided 
+a couple exmples of where I could use it as well as how to implement it. After checking out the code it sugeseted and applied it 
+there were a few issues with the page content adapting dynamicaly but after asking Copiolet why the behavior is not working it 
+checked all elements again and found there was something interfearing from CSS once ajusted it worked fine.
