@@ -81,44 +81,25 @@ h1 {
 }
 
 /* Request form */
-form {
+form.request-form {
     max-width: 820px;
     margin: 0 auto;
     padding: 34px 28px 24px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 64px;
-    row-gap: 10px;
 }
 
 form br {
     display: none;
 }
 
-form label {
+form.request-form label {
+    display: block;
     font-size: 16px;
     font-weight: 700;
-    margin-top: 10px;
+    margin-bottom: 0.5rem;
 }
 
-label[for="course"] {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-#course {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-label[for="date"] {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-#date {
-    grid-column: 2;
-    grid-row: 2;
+form.request-form .btn {
+    margin-top: 0.5rem;
 }
 
 select,
@@ -139,30 +120,6 @@ input:focus,
 textarea:focus {
     outline: 2px solid #7aa7d9;
     outline-offset: 2px;
-}
-
-button {
-    grid-column: 1;
-    grid-row: 3;
-    width: 224px;
-    margin-top: 26px;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: #d60000;
-    border: 0;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #b90000;
-}
-
-button:focus-visible {
-    outline: 3px solid #111827;
-    outline-offset: 3px;
 }
 
 /* Tutor table */
