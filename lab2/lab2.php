@@ -1,5 +1,7 @@
 <?php
 
+//require_once 'lab2B.php';
+
 // Lab 2: PHP Expressions and Control Structures
 
 echo '<h1>Lab 2A: Expressions and Control Structures</h1>';
