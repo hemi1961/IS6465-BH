@@ -1,0 +1,4 @@
+1. AI Tool used: Google Gemini
+2. Prompts used: "Generate HTML and CSS files for an AirAsia Rewards system matching my assignment rubric."
+3. How AI supported my work: The AI provided the semantic HTML structure, generated accessible form labels, wrote the CSS to format the pages cleanly, and ensured the form actions and anchor tags routed correctly to simulate the required workflow.
+4. AI suggestion tested/changed/rejected: The AI originally suggested using a <button> for navigation between the list and details pages, but I rejected it and changed it to standard anchor <a> tags to better align with standard HTML semantic practices for simple navigation.
