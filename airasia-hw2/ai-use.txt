@@ -1,4 +1,9 @@
 1. AI Tool used: Google Gemini
-2. Prompts used: "Generate HTML and CSS files for an AirAsia Rewards system matching my assignment rubric."
-3. How AI supported my work: The AI provided the semantic HTML structure, generated accessible form labels, wrote the CSS to format the pages cleanly, and ensured the form actions and anchor tags routed correctly to simulate the required workflow.
-4. AI suggestion tested/changed/rejected: The AI originally suggested using a <button> for navigation between the list and details pages, but I rejected it and changed it to standard anchor <a> tags to better align with standard HTML semantic practices for simple navigation.
+
+2. Prompts used: 
+- "Generate HTML and CSS files for an AirAsia Rewards system matching my assignment rubric and HW1 wireframes."
+- "Can we adjust CSS or HTML tags to make things like logout and +add new gift card appear as buttons?"
+
+3. How AI supported my work: The AI provided the semantic HTML structure, generated accessible form labels, and wrote the CSS to format the pages cleanly. It also helped me write a specific CSS class to style standard anchor links so they visually resemble buttons without breaking the required navigation workflow.
+
+4. The AI originally suggested using a <button> for navigation between the list and details pages, but I changed it to standard anchor <a> tags styled with a ".button-link" CSS class. This aligns better with standard HTML semantic practices for simple navigation while keeping the visual button design I wanted.

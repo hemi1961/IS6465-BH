@@ -30,7 +30,7 @@
         </form>
 
         <div class="nav-links">
-            <a href="card-list.php">Cancel</a>
+            <a href="card-list.php" class="button-link">Cancel</a>
         </div>
     </div>
 </body>

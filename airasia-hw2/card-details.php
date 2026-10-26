@@ -20,8 +20,8 @@
         </div>
 
         <div class="nav-links">
-            <a href="card-update.php">Update this Card</a>
-            <a href="card-list.php">Back to Card List</a>
+            <a href="card-update.php" class="button-link">Update this Card</a>
+            <a href="card-list.php" class="button-link">Back to Card List</a>
         </div>
     </div>
 </body>

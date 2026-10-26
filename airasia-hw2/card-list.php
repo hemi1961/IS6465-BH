@@ -30,8 +30,8 @@
         </div>
 
         <div class="nav-links">
-            <a href="card-add.php">+ Add New Gift Card</a>
-            <a href="login.php">Logout</a>
+            <a href="card-add.php" class="button-link">+ Add New Gift Card</a>
+            <a href="login.php" class="button-link">Logout</a>
         </div>
     </div>
 </body>
