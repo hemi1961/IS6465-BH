@@ -2,7 +2,7 @@
 
 ## Part 1: Run the application
 **What happens after submitting the form:**
-After submiting the form a page is displayed stating that the request was recived and it displays the course, request details, topics, and status of the request.
+After submitting the form a page is displayed stating that the request was received and it displays the course, request details, topics, and status of the request.
 
 **Screenshot:**
 ![Confirmation Screenshot](./Request-received.png) 
@@ -21,7 +21,7 @@ After submiting the form a page is displayed stating that the request was recive
 
 ## Part 3: Observe the form controls
 1. **reason:** 
-   This is a textarea feild where the user types what they need tutoring for. PHP receives it as a single string.
+   This is a textarea field where the user types what they need tutoring for. PHP receives it as a single string.
 2. **topics[]:** 
    The square brackets indicate this is an array of checkboxes. PHP receives it as an indexed array of strings containing all selected topics.
 3. **preferredtime:** 
@@ -60,7 +60,7 @@ After submiting the form a page is displayed stating that the request was recive
    * **Delete:** `delete-request.php`
 
 3. **What query parameter appears in the request details URL?** 
-   It uses the entrys associated request ID parameter `?request_id=` followed by the unique ID number of the request.
+   It uses the entry's associated request ID parameter `?request_id=` followed by the unique ID number of the request.
 4. **Why is a GET query parameter appropriate for viewing one request?** 
    Viewing a record is a "Read" action that doesn't modify data on the server. Using a GET parameter also allows the URL to be bookmarked, refreshed, or shared.
 5. **Why should an actual update or delete later use POST rather than GET?** 
