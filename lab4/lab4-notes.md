@@ -33,8 +33,8 @@ After submiting the form a page is displayed stating that the request was recive
 
 ## Part 4: Test validation behavior
 | Test | Values Entered | Accepted/Rejected | Message Displayed | Business Rule Checked |
-| :--- | :--- | :--- | :--- | :--- |
-| **Valid request** | Topics: Exam review<br>Course: IS 6570<br>Preferred time: Morning<br>Preferred date 11/11/2026<br>Reason: Exam review request | Accepted | [Your result] | Validates that all required fields are present, at least one topic is selected, and the date is not in the past. |
+| :--- | :----- | :--- | :--- | :--- |
+| **Valid request** | Topics: Exam review<br>Course: IS 6570<br>Preferred time: Morning<br>Preferred date: 11/11/2026<br>Reason: Exam review request | Accepted | [Your result] | Validates that all required fields are present, at least one topic is selected, and the date is not in the past. |
 | **Missing/invalid value** | [Your specific test data] | Rejected | [Your result] | Validates that required fields cannot be empty or null. |
 | **Past date** | [Your specific test data] | Rejected | [Your result] | Validates that the `preferreddate` is greater than or equal to the current date. |
 
