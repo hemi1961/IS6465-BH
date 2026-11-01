@@ -40,24 +40,16 @@ After submiting the form a page is displayed stating that the request was recive
 
 ## Part 5: Review testing and CRUD pages
 1. **Result shown for validation-tests.php:** 
+
    Valid time: PASS
-
    Missing time: PASS
-
    Altered value: PASS
-
    Multiple valid topics: PASS
-
    Missing topics: PASS
-
    Altered topic: PASS
-
    Minimum length: PASS
-
    Maximum length: PASS
-
    Too short: PASS
-
    Too long: PASS
 
 2. **CRUD Action Mapping:**
@@ -68,8 +60,8 @@ After submiting the form a page is displayed stating that the request was recive
    * **Delete:** `delete-request.php`
 
 3. **What query parameter appears in the request details URL?** 
-   It will use an identifier parameter, usually `?id=` followed by the unique ID number of the request[cite: 3].
+   It uses the entrys associated request ID parameter `?request_id=` followed by the unique ID number of the request.
 4. **Why is a GET query parameter appropriate for viewing one request?** 
-   Viewing a record is an idempotent "Read" action that doesn't modify data on the server[cite: 3]. Using a GET parameter allows the URL to be safely bookmarked, refreshed, or shared.
+   Viewing a record is a "Read" action that doesn't modify data on the server. Using a GET parameter also allows the URL to be bookmarked, refreshed, or shared.
 5. **Why should an actual update or delete later use POST rather than GET?** 
-   Update and delete are destructive actions that alter server state[cite: 3]. If GET were used, web crawlers, browser pre-fetching, or accidental link clicks could unintentionally modify or delete database records[cite: 3]. POST ensures the action requires an intentional form submission[cite: 3].
+   Update and delete are modifying actions that alter server data state. POST ensures the action requires an intentional form submission.
