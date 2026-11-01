@@ -2,10 +2,10 @@
 
 ## Part 1: Run the application
 **What happens after submitting the form:**
-[Insert your observation here after testing in Codespaces. Example: "After submitting a valid tutoring request, the application processes the data and redirects to a confirmation page displaying the submitted details."]
+After submiting the form a page is displayed stating that the request was recived and it displays the course, request details, topics, and status of the request.
 
 **Screenshot:**
-![Confirmation Screenshot](./path-to-your-screenshot.png) 
+![Confirmation Screenshot](./Request-received.png) 
 
 ## Part 2: Trace the templates
 1. **What content does header.php provide to every page?** 
