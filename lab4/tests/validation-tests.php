@@ -1,5 +1,7 @@
 <?php
 require_once '../includes/validation.php';
+
+// Test cases for validatePreferredTime function
 $tests = [
     ['name' => 'Valid time', 'input' => 'Morning', 'expected' => ''],
     ['name' => 'Missing time', 'input' => '', 'expected' => 'Choose a valid preferred time.'],
