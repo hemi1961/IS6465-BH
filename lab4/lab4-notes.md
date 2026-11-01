@@ -36,7 +36,7 @@ After submiting the form a page is displayed stating that the request was recive
 | :--- | :--- | :--- | :--- | :--- |
 | **Valid request** | Topics: Exam review<br>Course: IS 6570<br>Preferred time: Morning<br>Preferred date: 11/11/2026<br>Reason: Exam review request | Accepted | Request received<br>Course: IS 6570<br>Request details: Exam review request<br>Topics: Exam review<br>Status: Pending review | Validates that all required fields are present, at least one topic is selected, and the date is not in the past. |
 | **Missing/invalid value** | Topics: \<no selection made\><br>Course: IS 6570<br>Preferred time: Morning<br>Preferred date: 11/11/2026<br>Reason: Exam review request | Rejected | Request could not be submitted<br>Select at least one valid topic. | Validates that required fields cannot be empty or null. |
-| **Past date** | [Your specific test data] | Rejected | [Your result] | Validates that the `preferreddate` is greater than or equal to the current date. |
+| **Past date** | Topics: Exam review<br>Course: IS 6570<br>Preferred time: Morning<br>Preferred date: 07/04/1776<br>Reason: Exam review request  | Rejected | Request could not be submitted<br>Preferred date cannot be in the past. | Validates that the `preferreddate` is greater than or equal to the current date. |
 
 ## Part 5: Review testing and CRUD pages
 1. **Result shown for validation-tests.php:** 
