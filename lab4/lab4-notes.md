@@ -40,7 +40,25 @@ After submiting the form a page is displayed stating that the request was recive
 
 ## Part 5: Review testing and CRUD pages
 1. **Result shown for validation-tests.php:** 
-   [Run tests/validation-tests.php in Codespaces and paste the output here][cite: 3].
+   Valid time: PASS
+
+   Missing time: PASS
+
+   Altered value: PASS
+
+   Multiple valid topics: PASS
+
+   Missing topics: PASS
+
+   Altered topic: PASS
+
+   Minimum length: PASS
+
+   Maximum length: PASS
+
+   Too short: PASS
+
+   Too long: PASS
 
 2. **CRUD Action Mapping:**
    * **Create:** `request-form.php`
