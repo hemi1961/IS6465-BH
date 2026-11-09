@@ -82,13 +82,13 @@ Just like with `UPDATE`, if a `DELETE` statement does not include a `WHERE` clau
 | **Create** | `INSERT INTO` | Submitting a new tutoring request form. |
 | **Read** | `SELECT` | Viewing a list of all open requests or viewing one request's details. |
 | **Update** | `UPDATE` | Changing the scheduled time or cancelling a request. |
-| **Delete** | `DELETE FROM` | Permanently removing a test or junk request from the database. |
+| **Delete** | `DELETE FROM` | Permanently removing a cancelled or unwanted request. |
 
 **1. How does the database preserve the connection between a student and that student's requests?**
 It preserves the connection using a Foreign Key constraint. The `student_id` in the `tutoring_requests` table explicitly references the primary key `student_id` in the `students` table.
 
 **2. Which database constraint prevents two student rows from using the same email address?**
-The `UNIQUE` constraint on the `student_email` column prevents duplicate email entries.
+The `UNIQUE` constraint on the `student_email` column prevents duplicate email entries in email colume in the table.
 
 **3. What could happen if an UPDATE or DELETE statement did not include a WHERE clause?**
 The database would apply the action globally, either overwriting every record with the same data (for an UPDATE) or permanently erasing all data in the table (for a DELETE).
