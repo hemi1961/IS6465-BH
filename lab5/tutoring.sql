@@ -55,10 +55,8 @@ ORDER BY r.preferred_date;
 
 -- Part 4: Update one request
 -- Change Jordan's request topic and time
-UPDATE tutoring_requests
-SET topic = 'PHP arrays and forms - updated',
-    preferred_date = '2026-10-12',
-    preferred_time = '15:00'
+UPDATE tutoring_requests 
+SET topic = 'Forms and Validation', preferred_time = '11:00' 
 WHERE request_id = 1;
 
 -- Delete one request
@@ -68,7 +66,7 @@ WHERE request_id = 1;
 -- Change Avery's request status to Cancelled
 UPDATE tutoring_requests
 SET status = 'Cancelled'
-WHERE request_id = 1;
+WHERE request_id = 3;
 
 -- Part 5: Delete one test request
 -- Insert test request

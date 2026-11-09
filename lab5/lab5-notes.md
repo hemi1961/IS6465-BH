@@ -43,22 +43,16 @@ The `request_id` is a primary key, meaning it is guaranteed to be unique for eve
 
 ## Part 4: Update one request
 **1. The two UPDATE statements used:**
-```sql
-UPDATE tutoring_requests SET topic = 'Forms and Validation', preferred_time = '11:00 AM' WHERE request_id = 1;
-UPDATE tutoring_requests SET status = 'Cancelled' WHERE request_id = 3;
-```
+
+![UPDATE statments](./Part4.1.JPG)
 
 **2. Before-and-after screenshot or pasted SELECT output for the revised request:**
-```text
-sqlite> SELECT * FROM tutoring_requests WHERE request_id = 1;
-1|1|IS 6465|Forms and Validation|2026-11-20|11:00 AM|open|2026-11-08 20:43:00
-```
+
+![Before and After Update](./Part4.2.JPG)
 
 **3. Screenshot or pasted query result showing Avery's Cancelled status:**
-```text
-sqlite> SELECT * FROM tutoring_requests WHERE request_id = 3;
-3|2|IS 6465|SQLite CRUD|2026-11-23|1:00 PM|Cancelled|2026-11-08 20:43:00
-```
+
+![Before and after Cancelled UPDATE ](./Part4.3.JPG)
 
 **4. Why is a specific WHERE clause essential in an UPDATE statement?**
 Without a `WHERE` clause specifying exactly which row to change (like `request_id = 1`), the `UPDATE` statement would apply the change to every single row in the entire table. 
