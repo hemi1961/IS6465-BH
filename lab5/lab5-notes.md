@@ -2,7 +2,7 @@
 
 ## Part 1: Create the database tables
 **1. Screenshot or pasted output showing table names and schema:**
-[Run `.tables` and `.schema` in your Codespaces SQLite terminal and paste the output here] /Part1.jpg
+[Run `.tables` and `.schema` in your Codespaces SQLite terminal and paste the output here] (./Part1.jpg)
 
 **2. Which column is the primary key in each table?**
 * In the `students` table, it is `student_id`.
