@@ -29,18 +29,8 @@ Because the database uses a relational model with a foreign key, Jordan only nee
 
 ## Part 3: Read the stored data
 **1. JOIN query and output:**
-```sql
-SELECT 
-    tr.request_id, s.student_name, s.student_email, tr.course, tr.topic, tr.preferred_date, tr.preferred_time, tr.status
-FROM tutoring_requests tr
-JOIN students s ON tr.student_id = s.student_id
-ORDER BY tr.preferred_date;
-```
-```text
-1|Jordan Lee|jordan.lee@example.edu|IS 6465|Forms|2026-11-20|10:00 AM|open
-2|Jordan Lee|jordan.lee@example.edu|IS 6465|SQL SELECT|2026-11-22|2:00 PM|open
-3|Avery Patel|avery.patel@example.edu|IS 6465|SQLite CRUD|2026-11-23|1:00 PM|open
-```
+
+![JOIN query and output](./Part3.0.JPG)
 
 **2. What does the JOIN condition connect?**
 The JOIN condition (`ON tr.student_id = s.student_id`) connects the foreign key in the `tutoring_requests` table to the primary key in the `students` table, combining the related data into a single result set.

@@ -35,7 +35,7 @@ SELECT * FROM students;
 
 -- 2. Display all rows in tutoring_requests
 SELECT * FROM tutoring_requests;
-/*
+
 -- 3. Display only requests with a status of Open
 SELECT * FROM tutoring_requests WHERE status = 'open';
 
