@@ -17,14 +17,103 @@ It prevents duplicate accounts from being created. This ensures that every email
 
 ## Part 2: Insert students and tutoring requests
 **1. INSERT statements used:**
-```sql
-INSERT INTO students (student_name, student_email) 
-VALUES 
-    ('Jordan Lee', 'jordan.lee@example.edu'),
-    ('Avery Patel', 'avery.patel@example.edu');
 
-INSERT INTO tutoring_requests (student_id, course, topic, preferred_date, preferred_time) 
-VALUES 
-    (1, 'IS 6465', 'Forms', '2026-11-20', '10:00 AM'),
-    (1, 'IS 6465', 'SQL SELECT', '2026-11-22', '2:00 PM'),
-    (2, 'IS 6465', 'SQLite CRUD', '2026-11-23', '1:00 PM');
+![INSERT statments](./Part2.1.JPG)
+
+**2. Screenshot or pasted SELECT output that shows the rows in both tables:**
+
+![SELECT output](./Part2.2.JPG)
+
+**3. Explanation of why Jordan has one student row but two request rows:**
+Because the database uses a relational model with a foreign key, Jordan only needs one entry in the `students` table. Every time Jordan submits a new request, a new row is added to the `tutoring_requests` table that references Jordan's single `student_id`, preventing redundant duplication of name and email data.
+
+## Part 3: Read the stored data
+**1. JOIN query and output:**
+```sql
+SELECT 
+    tr.request_id, s.student_name, s.student_email, tr.course, tr.topic, tr.preferred_date, tr.preferred_time, tr.status
+FROM tutoring_requests tr
+JOIN students s ON tr.student_id = s.student_id
+ORDER BY tr.preferred_date;
+```
+```text
+1|Jordan Lee|jordan.lee@example.edu|IS 6465|Forms|2026-11-20|10:00 AM|open
+2|Jordan Lee|jordan.lee@example.edu|IS 6465|SQL SELECT|2026-11-22|2:00 PM|open
+3|Avery Patel|avery.patel@example.edu|IS 6465|SQLite CRUD|2026-11-23|1:00 PM|open
+```
+
+**2. What does the JOIN condition connect?**
+The JOIN condition (`ON tr.student_id = s.student_id`) connects the foreign key in the `tutoring_requests` table to the primary key in the `students` table, combining the related data into a single result set.
+
+**3. What is the difference between the purpose of JOIN and WHERE?**
+A `JOIN` is used to combine columns from two or more related tables based on a shared relationship, whereas `WHERE` is used to filter the rows returned based on specific conditions.
+
+**4. Why should the application retrieve one request by request_id instead of by topic alone?**
+The `request_id` is a primary key, meaning it is guaranteed to be unique for every single row. If the application filtered by `topic` alone, it might accidentally retrieve multiple different requests from different students if they happened to ask for help on the same subject.
+
+## Part 4: Update one request
+**1. The two UPDATE statements used:**
+```sql
+UPDATE tutoring_requests SET topic = 'Forms and Validation', preferred_time = '11:00 AM' WHERE request_id = 1;
+UPDATE tutoring_requests SET status = 'Cancelled' WHERE request_id = 3;
+```
+
+**2. Before-and-after screenshot or pasted SELECT output for the revised request:**
+```text
+sqlite> SELECT * FROM tutoring_requests WHERE request_id = 1;
+1|1|IS 6465|Forms and Validation|2026-11-20|11:00 AM|open|2026-11-08 20:43:00
+```
+
+**3. Screenshot or pasted query result showing Avery's Cancelled status:**
+```text
+sqlite> SELECT * FROM tutoring_requests WHERE request_id = 3;
+3|2|IS 6465|SQLite CRUD|2026-11-23|1:00 PM|Cancelled|2026-11-08 20:43:00
+```
+
+**4. Why is a specific WHERE clause essential in an UPDATE statement?**
+Without a `WHERE` clause specifying exactly which row to change (like `request_id = 1`), the `UPDATE` statement would apply the change to every single row in the entire table. 
+
+**5. Why does the Peer Tutoring Hub use a Cancelled status instead of immediately deleting a real request?**
+Using a "Cancelled" status (often called a soft delete) preserves historical data and audit trails. It allows administrators to keep records of how many requests were made versus completed, while keeping the data safe from accidental permanent deletion.
+
+## Part 5: Delete one test request
+**1. INSERT statement for the test request:**
+```sql
+INSERT INTO tutoring_requests (student_id, course, topic, preferred_date, preferred_time) VALUES (1, 'Test Course', 'Delete Practice', '2026-12-01', '12:00 PM');
+```
+
+**2. DELETE statement used:**
+```sql
+DELETE FROM tutoring_requests WHERE request_id = 4;
+```
+
+**3. Screenshot or pasted output that verifies the test record was removed:**
+```text
+sqlite> SELECT * FROM tutoring_requests;
+1|1|IS 6465|Forms and Validation|2026-11-20|11:00 AM|open|2026-11-08 20:43:00
+2|1|IS 6465|SQL SELECT|2026-11-22|2:00 PM|open|2026-11-08 20:43:00
+3|2|IS 6465|SQLite CRUD|2026-11-23|1:00 PM|Cancelled|2026-11-08 20:43:00
+```
+
+**4. Why is a WHERE clause essential in a DELETE statement?**
+Just like with `UPDATE`, if a `DELETE` statement does not include a `WHERE` clause to isolate a specific row, it will wipe out all records in the table. 
+
+## Part 6: Reflect on the CRUD workflow
+| CRUD action | SQL statement used in this lab | Peer Tutoring Hub example |
+| :--- | :--- | :--- |
+| **Create** | `INSERT INTO` | Submitting a new tutoring request form. |
+| **Read** | `SELECT` | Viewing a list of all open requests or viewing one request's details. |
+| **Update** | `UPDATE` | Changing the scheduled time or cancelling a request. |
+| **Delete** | `DELETE FROM` | Permanently removing a test or junk request from the database. |
+
+**1. How does the database preserve the connection between a student and that student's requests?**
+It preserves the connection using a Foreign Key constraint. The `student_id` in the `tutoring_requests` table explicitly references the primary key `student_id` in the `students` table.
+
+**2. Which database constraint prevents two student rows from using the same email address?**
+The `UNIQUE` constraint on the `student_email` column prevents duplicate email entries.
+
+**3. What could happen if an UPDATE or DELETE statement did not include a WHERE clause?**
+The database would apply the action globally, either overwriting every record with the same data (for an UPDATE) or permanently erasing all data in the table (for a DELETE).
+
+**4. When the application later receives values from an HTML form, why should PHP send those values as parameters instead of placing them directly into SQL text?**
+Placing form values directly into SQL text exposes the application to SQL Injection attacks, where malicious users could execute destructive commands on the database. Using prepared statements with parameters ensures the data is treated strictly as safe values, not executable code.

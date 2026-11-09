@@ -19,11 +19,15 @@ CREATE TABLE if not exists tutoring_requests (
 
 -- Part 2: Insert students and tutoring requests
 INSERT Or ignore INTO students (student_name, student_email) 
-VALUES ('Maria Lopez', 'maria.lopez@example.com');
-    
+VALUES 
+    ('Jordan Lee', 'jordan.lee@example.edu'),
+    ('Avery Patel', 'avery.patel@example.edu');
 
 INSERT OR ignore INTO tutoring_requests (student_id, course, topic, preferred_date, preferred_time) 
-VALUES (1, 'IS 6465', 'PHP arrays and forms', '2026-11-03', '14:00');
+VALUES 
+    (1, 'IS 6465', 'Forms', '2026-11-20', '10:00'),
+    (1, 'IS 6465', 'SQL SELECT', '2026-11-22', '14:00'),
+    (2, 'IS 6465', 'SQLite CRUD', '2026-11-23', '13:00');
 
 -- Part 3: Read the stored data
 -- 1. Display all rows in students
@@ -31,7 +35,7 @@ SELECT * FROM students;
 
 -- 2. Display all rows in tutoring_requests
 SELECT * FROM tutoring_requests;
-
+/*
 -- 3. Display only requests with a status of Open
 SELECT * FROM tutoring_requests WHERE status = 'open';
 
@@ -50,7 +54,7 @@ JOIN students AS s ON r.student_id = s.student_id
 ORDER BY r.preferred_date;
 
 -- Part 4: Update one request
--- Change maria's request topic and time
+-- Change Jordan's request topic and time
 UPDATE tutoring_requests
 SET topic = 'PHP arrays and forms - updated',
     preferred_date = '2026-10-12',
@@ -61,7 +65,7 @@ WHERE request_id = 1;
 --DELETE from tutoring_requests
 --WHERE request_id = 2;
 
--- Change Maria's request status to Cancelled
+-- Change Avery's request status to Cancelled
 UPDATE tutoring_requests
 SET status = 'Cancelled'
 WHERE request_id = 1;
