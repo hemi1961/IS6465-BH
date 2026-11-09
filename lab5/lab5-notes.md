@@ -62,22 +62,16 @@ Using a "Cancelled" status (often called a soft delete) preserves historical dat
 
 ## Part 5: Delete one test request
 **1. INSERT statement for the test request:**
-```sql
-INSERT INTO tutoring_requests (student_id, course, topic, preferred_date, preferred_time) VALUES (1, 'Test Course', 'Delete Practice', '2026-12-01', '12:00 PM');
-```
+
+![Test request INSERT](./Part5.1.JPG)
 
 **2. DELETE statement used:**
-```sql
-DELETE FROM tutoring_requests WHERE request_id = 4;
-```
+
+![DELETE statment](./Part5.2.JPG)
 
 **3. Screenshot or pasted output that verifies the test record was removed:**
-```text
-sqlite> SELECT * FROM tutoring_requests;
-1|1|IS 6465|Forms and Validation|2026-11-20|11:00 AM|open|2026-11-08 20:43:00
-2|1|IS 6465|SQL SELECT|2026-11-22|2:00 PM|open|2026-11-08 20:43:00
-3|2|IS 6465|SQLite CRUD|2026-11-23|1:00 PM|Cancelled|2026-11-08 20:43:00
-```
+
+![Output verifying INSERT and DELETE success](./Part5.3.JPG)
 
 **4. Why is a WHERE clause essential in a DELETE statement?**
 Just like with `UPDATE`, if a `DELETE` statement does not include a `WHERE` clause to isolate a specific row, it will wipe out all records in the table. 

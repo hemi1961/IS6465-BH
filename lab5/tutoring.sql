@@ -71,7 +71,7 @@ WHERE request_id = 3;
 -- Part 5: Delete one test request
 -- Insert test request
 INSERT INTO tutoring_requests (student_id, course, topic, preferred_date, preferred_time) 
-VALUES (1, 'Test Course', 'Delete Practice', '2026-12-01', '12:00 PM');
+VALUES (1, 'Test Course', 'Delete Practice', '2026-12-01', '12:00');
 
 -- Delete the test request
 DELETE FROM tutoring_requests WHERE request_id = 4;
