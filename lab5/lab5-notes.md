@@ -2,6 +2,7 @@
 
 ## Part 1: Create the database tables
 **1. Screenshot or pasted output showing table names and schema:**
+
 ![Output after running `.tables` and `.schema` in Codespaces SQLite](./Part1.JPG)
 
 **2. Which column is the primary key in each table?**
