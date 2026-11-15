@@ -1,0 +1,5 @@
+1. AI Tool used: Google Gemini
+2. Prompts used: "I have included HW1 file for context I am working on HW3... need help working throught this assignment quickly"
+3. How AI supported my work: The AI provided the full SQLite database schema and seed records, set up the PDO database connection, generated the CRUD PHP files with PDO prepared statements, structured the shared templates, and wrote the validation functions and testing harness.
+4. AI suggestion tested/revised/rejected: The AI provided a centralized includes/validation.php file which I verified and integrated across the Create and Update pages to enforce strict server-side validation against malicious inputs.
+5. Verification: I verified the final code by running the `validation-tests.php` file directly in the browser to ensure the PHP logic correctly filters inputs, and I manually walked through the CRUD operations on `card-list.php` to ensure records were properly inserted into and retrieved from the SQLite `rewards.db` file.
