@@ -1,7 +1,5 @@
 # Lab 6: PHP, PDO, and SQLite Integration Notes
 
-**GitHub Codespaces Link:** [Insert your GitHub Codespaces link here]
-
 ---
 
 ## Part 1: Set Up the Database

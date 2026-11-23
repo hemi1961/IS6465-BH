@@ -7,6 +7,7 @@
  * Run from the lab7 directory:
  *   php tests/user-management-tests.php
  */
+ob_start();
 require_once dirname(__DIR__) . '/services/userService.php';
 require_once dirname(__DIR__) . '/services/requestService.php';
 
@@ -489,4 +490,5 @@ check(
 );
 
 echo 'Results: ' . $passed . ' passed, ' . $failed . ' failed' . PHP_EOL;
+ob_end_flush();
 exit($failed > 0 ? 1 : 0);
